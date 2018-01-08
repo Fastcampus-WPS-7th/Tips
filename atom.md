@@ -16,6 +16,16 @@
 **동일텍스트 선택**  
 `cmd + d` or `Ctrl + d`
 
+## 주석색깔 변경
+
+`Atom preferences -> Themes -> your style sheet`
+
+```
+// 맨 아래줄에 입력 (주석 색깔 변경) 
+atom-text-editor::shadow .comment {
+  color: #d6d679;
+}
+```
 
 ## sass-autocompile 패키지 설치
 
