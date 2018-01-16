@@ -20,25 +20,19 @@ chsh -s `which zsh`
 **macOS**
 
 ```
-brew install zsh zsh-completions
+brew install zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions
 curl -L http://install.ohmyz.sh | sh
 ```
 
 > **확인법**  
 > echo $SHELL
 
----
-
-#### 기존 ~/.bashrc설정 (macOS는 ~/.bash_profile)을 ~/.zshrc로 복사
-
-`vi ~/.bashrc​`로 파일 연 후, 복사하고  
-`vi ~/.zshrc`로 파일 연 후 `shift + g`로 맨 밑으로 이동하고 `shift + a`로 줄 맨 뒤로 이동, `a`또는 `i`눌러 입력모드 전환 후 붙여넣기
-
 **필수적으로 추가되어야 할 부분**
 
 **Ubuntu**
 
 ```
+# pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
@@ -48,9 +42,20 @@ eval "$(pyenv virtualenv-init -)"
 **macOS**
 
 ```
+# pyenv
 export PYENV_ROOT=/usr/local/var/pyenv
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+
+# zsh-autosuggestions
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# zsh-completions
+fpath=(/usr/local/share/zsh-completions $fpath)
+autoload -Uz compinit && compinit -i
+
+# zsh-syntax-highlighting
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ```
 
 
