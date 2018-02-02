@@ -1,4 +1,20 @@
-# Shell(셸) 설정
+# Shell(셸) 관련
+
+## 실행중인 Django runserver 끄기
+
+```
+❯ ps -ax | grep runserver
+ 1873 ttys001    0:00.00 grep --color=auto --exclude-dir=.bzr --exclude-dir=CVS --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn runserver
+ 1806 ttys003    0:00.72 python ./manage.py runserver
+ 1822 ttys003    0:00.67 /usr/local/var/pyenv/versions/fc-djangogirls/bin/python ./manage.py runserver
+```
+
+좌측의 PID에 해당하는 숫자에
+
+```
+kill -9 <pid>
+```
+를 입력
 
 ## 기본 셸을 zsh로 변경
 
